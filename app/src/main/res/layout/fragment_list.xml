@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenter.list.ListFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/erica_one"
+        android:gravity="center"
+        android:textColor="#8995FF"
+        android:textSize="40sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="14"
+        android:shadowDy="8"
+        android:shadowRadius="11.6"
+        android:textAllCaps="true"
+        android:text="@string/hello_blank_fragment" />
+
+</FrameLayout>
