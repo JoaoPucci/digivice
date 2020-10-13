@@ -1,14 +1,13 @@
 package tech.pucci.digivice.presenter.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import tech.pucci.digivice.R
+import tech.pucci.digivice.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
 
@@ -18,13 +17,15 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        observeDigimon()
-        return inflater.inflate(R.layout.fragment_list, container, false)
+        return FragmentListBinding.inflate(inflater, container, false).run {
+            observeDigimon(tvName)
+            root
+        }
     }
 
-    fun observeDigimon() {
+    fun observeDigimon(tvName: TextView) {
         viewModel.digimon.observe(viewLifecycleOwner) {
-            Toast.makeText(context, it[0].name, Toast.LENGTH_LONG).show()
+            tvName.text = it[0].name
         }
     }
 }
