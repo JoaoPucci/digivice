@@ -9,6 +9,6 @@ class DigimonRepositoryImpl : DigimonRepository {
     private val service = DigimonServiceProvider.service
 
     override suspend fun getAll() = withContext(Dispatchers.IO) {
-        service.list()
+        service.list().map { it.transform() }
     }
 }

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Digivice</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cd_level_icon">level icon</string>
+    <string name="cd_digimon_image">digimon image in a white background</string>
 </resources>

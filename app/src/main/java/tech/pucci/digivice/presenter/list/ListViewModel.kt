@@ -17,13 +17,19 @@ class ListViewModel : ViewModel() {
     val digimon: LiveData<List<Digimon>>
         get() = _digimon
 
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean>
+        get() = _loading
+
     init {
         loadDigimon()
     }
 
-    fun loadDigimon() {
+    private fun loadDigimon() {
         viewModelScope.launch {
+            _loading.value = true
             _digimon.value = repository.getAll()
+            _loading.value = false
         }
     }
 }

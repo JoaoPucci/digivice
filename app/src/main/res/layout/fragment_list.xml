@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presenter.list.ListFragment">
+<layout>
 
-    <TextView
-        android:id="@+id/tv_name"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="tech.pucci.digivice.presenter.list.ListViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fontFamily="@font/erica_one"
-        android:gravity="center"
-        android:textColor="#8995FF"
-        android:textSize="40sp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="14"
-        android:shadowDy="8"
-        android:shadowRadius="11.6"
-        android:textAllCaps="true"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_digimon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:context=".presenter.list.ListFragment"
+            tools:listitem="@layout/list_item_digimon" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            visibility="@{viewModel.loading}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</layout>
