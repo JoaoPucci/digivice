@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,9 +10,7 @@
             type="tech.pucci.digivice.data.model.Digimon" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -24,7 +24,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="149dp">
 
             <TextView
                 android:id="@+id/mtv_name"
@@ -40,7 +40,7 @@
                 android:textColor="@color/color_matrix"
                 app:autoSizeMinTextSize="8sp"
                 app:autoSizeTextType="uniform"
-                app:fontFamily="@font/press_start_2p"
+                app:fontFamily="@font/erica_one"
                 app:layout_constraintBottom_toTopOf="@+id/mcv_level"
                 app:layout_constraintEnd_toStartOf="@+id/mcv_image_container"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,28 +51,30 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcv_level"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="8dp"
                 app:cardBackgroundColor="@color/color_sukamon"
                 app:cardCornerRadius="4dp"
                 app:contentPadding="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/mcv_image_container"
-                app:layout_constraintEnd_toEndOf="@+id/mtv_name"
-                app:layout_constraintStart_toStartOf="@id/mtv_name"
+                app:layout_constraintEnd_toStartOf="@+id/mcv_image_container"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mtv_name"
                 app:strokeColor="@color/color_devimon"
                 app:strokeWidth="3dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/iv_level"
                         drawable="@{digimon.level.drawableResource}"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
+                        android:layout_width="59dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
                         android:contentDescription="@string/cd_level_icon"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitXY"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/mtv_level"
                         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +85,7 @@
                         android:id="@+id/mtv_level"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="@{digimon.level.toString()}"
@@ -91,7 +93,7 @@
                         app:autoSizeMaxTextSize="50sp"
                         app:autoSizeMinTextSize="1sp"
                         app:autoSizeTextType="uniform"
-                        app:fontFamily="@font/press_start_2p"
+                        app:fontFamily="@font/erica_one"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/iv_level"
@@ -103,10 +105,10 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcv_image_container"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
                 app:cardCornerRadius="8dp"
+                app:contentPadding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -116,8 +118,8 @@
                 <ImageView
                     android:id="@+id/iv_digimon"
                     imageUrl="@{digimon.imageUrl}"
-                    android:layout_width="136dp"
-                    android:layout_height="102dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/cd_digimon_image"
                     tools:src="@drawable/koromon" />
             </com.google.android.material.card.MaterialCardView>

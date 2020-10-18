@@ -10,7 +10,7 @@ enum class Level {
         fun from(name: String) = when(name) {
             FRESH.toString() -> FRESH
             IN_TRAINING.toString(), "Training" -> IN_TRAINING
-            ROOKIE.toString() -> IN_TRAINING
+            ROOKIE.toString() -> ROOKIE
             CHAMPION.toString() -> CHAMPION
             ULTIMATE.toString() -> ULTIMATE
             MEGA.toString() -> MEGA
@@ -31,12 +31,12 @@ enum class Level {
 
     val drawableResource: Int
         get() = when(this) {
-            FRESH -> R.drawable.boxing
+            FRESH -> R.drawable.egg
             IN_TRAINING -> R.drawable.boxing
-            ROOKIE -> R.drawable.boxing
-            CHAMPION -> R.drawable.boxing
-            ULTIMATE -> R.drawable.boxing
-            MEGA -> R.drawable.boxing
-            ARMOR -> R.drawable.boxing
+            ROOKIE -> R.drawable.rookie
+            CHAMPION -> R.drawable.champion_belt
+            ULTIMATE -> R.drawable.willpower
+            MEGA -> R.drawable.level_up
+            ARMOR -> R.drawable.crest
         }
 }
