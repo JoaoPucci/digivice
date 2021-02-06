@@ -51,6 +51,7 @@ captures/
 .idea/navEditor.xml
 .idea/render.experimental.xml
 .idea/compiler.xml
+.idea/.name
 
 # Keystore files
 *.jks
