@@ -45,11 +45,13 @@ captures/
 .idea/dictionaries
 .idea/libraries
 .idea/jarRepositories.xml
-# Android Studio 3 in .gitignore file.
+# Android Studio 4 in .gitignore file.
 .idea/caches
 .idea/modules.xml
 .idea/navEditor.xml
 .idea/render.experimental.xml
+.idea/compiler.xml
+.idea/.name
 
 # Keystore files
 *.jks
@@ -77,3 +79,6 @@ lint/reports/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# firebase
+*google-services.json
